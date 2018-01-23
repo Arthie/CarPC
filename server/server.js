@@ -73,11 +73,9 @@ io.on("connection", socket => {
       const [OBDobj] = res.split("\n")
       const obj = JSON.parse(OBDobj)
       if ("SPEED" in obj) {
-        console.log("emit speed", obj)
         io.emit("SPEED", obj)
       }
       if ("RPM" in obj) {
-        console.log("emit rpm", obj)
         io.emit("RPM", obj)
       }
     }
