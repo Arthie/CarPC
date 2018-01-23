@@ -56,7 +56,7 @@ To run the development server run yarn start
 yarn start
 ```
 
-### Installing and connecting to obd of your car
+### Installing and connecting to obd port of your car
 
 -tutorial coming soon
 
