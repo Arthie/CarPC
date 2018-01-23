@@ -69,6 +69,13 @@ yarn start
 * [Redux]() - State management
 * [Socket.io]() - Realtime server / client connection
 
+## To Do
+- change express api endpoints to appollo (graphql)
+- Spotify support
+- Soundcloud support
+- In depth car diagnostic dashbord
+- 0-100 km/h timer
+- ...
 
 ## License
 
