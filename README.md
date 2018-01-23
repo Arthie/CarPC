@@ -6,12 +6,16 @@ Driving my car with only a radio got quite boring. I decided to build my own car
 
 ### Prerequisites
 -Node (latest version 9+)
+
 -Yarn (or npm but install tutorial uses yarn)
+
 -Python 3 (latest version)
 
 ### Hardware
 -raspberry pi 3
+
 -touchscreen
+
 -odb2 to serial adapter
 
 ### Installing demo
@@ -59,11 +63,11 @@ yarn start
 ## Built With
 
 * [React]() - Front end web framework
-* [Create react app] - React build tool
-* [Styled-components] - CSS in JS framework
+* [Create react app]() - React build tool
+* [Styled-components]() - CSS in JS framework
 * [Express]() - Web server
 * [Redux]() - State management
-* [Socket.io] - Realtime server / client connection
+* [Socket.io]() - Realtime server / client connection
 
 
 ## License
