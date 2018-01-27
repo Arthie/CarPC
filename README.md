@@ -1,6 +1,9 @@
 # CarPC
 React App designed to run on a raspberry pi and make driving my car more fun.
 
+![Project running](https://github.com/Arthie/CarPC/raw/master/image2.PNG)
+
+running on the raspberry pi:
 ![Project running on raspberry pi](https://github.com/Arthie/CarPC/raw/master/image1.PNG)
 
 ## Problem this solves
