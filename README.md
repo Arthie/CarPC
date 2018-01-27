@@ -1,6 +1,8 @@
 # CarPC
 React App designed to run on a raspberry pi and make driving my car more fun.
 
+![Project running on raspberry pi](https://github.com/Arthie/CarPC/raw/master/image1.PNG)
+
 ## Problem this solves
 Driving my car with only a radio got quite boring. I decided to build my own car infotainment system. I mainly wanted a solution to play the music and audio books I like.
 
