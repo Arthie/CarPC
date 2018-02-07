@@ -19,12 +19,12 @@ def new_rpm(r):
 
 
 def main():
-    obd.logger.setLevel(obd.logging.DEBUG) # enables all debug information
+    #obd.logger.setLevel(obd.logging.DEBUG) # enables all debug information
 
     ports = obd.scan_serial()  # return list of valid USB or RF ports
     log("Ports:" + str(ports))
-
-    connection = obd.Async(portstr="COM5", baudrate=38400,
+    log(sys.argv[1])
+    connection = obd.Async(portstr=sys.argv[1], baudrate=38400,
                            protocol=None, fast=False)
     speed = obd.commands['SPEED']
     rpm = obd.commands['RPM']

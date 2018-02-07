@@ -8,9 +8,9 @@ const spawn = require("child_process").spawn
  * @param  { function } dataCB -callback function for script output
  */
 //args: file:__dirname+'/obd.py', data, error, end, kill
-const PythonToNode = (file, dataCB) => {
+const PythonToNode = (file, dataCB, arg1) => {
   console.log("python script started")
-  const py = spawn("python", [file])
+  const py = spawn("python", [file, arg1])
 
   //when python script outputs data this event wil fire
   py.stdout.on("data", data => {

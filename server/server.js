@@ -17,11 +17,13 @@ const io = require("socket.io")(server)
 const folderData = require("./utils/folderData")
 const PythonToNode = require("./utils/NodePythonBridge")
 
+//import constants
+const { MUSICFOLDER, PYTHONSCRIPT, OBDSERIALPORT } = require("./constants")[process.argv[2]]
+
 ///////////
 //Express//
 ///////////
 
-const ROOTFOLDER = "C:/Users/Arthie/Music"
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*")
@@ -34,17 +36,16 @@ app.use((req, res, next) => {
   next()
 })
 
-console.log(path.join(__dirname + "../../build/"))
 app.use(express.static(path.join(__dirname + "../../build/")))
 
 //warning known vunrability: path traversal https://www.owasp.org/index.php/Path_Traversal
 //warning known vunrability: user input not sanitized
 app.get("/folder", (req, res) => {
-  const data = folderData.get(ROOTFOLDER, req.query.path)
+  const data = folderData.get(MUSICFOLDER, req.query.path)
   data.then(result => res.send(result))
 })
 
-app.use("/song", express.static(ROOTFOLDER))
+app.use("/song", express.static(MUSICFOLDER))
 
 app.listen(3005, _ => console.log("Express running on port:3005"))
 
@@ -79,7 +80,7 @@ io.on("connection", socket => {
         io.emit("RPM", obj)
       }
     }
-    const py = PythonToNode(__dirname + "/utils/test.py", data)
+    const py = PythonToNode(__dirname + PYTHONSCRIPT, data, OBDSERIALPORT)
     console.log("a user connected")
     socket.on("disconnect", _ => {
       py.kill()
