@@ -1,0 +1,43 @@
+# dont split in multiple files aka dont inport bug with path finding / or webpack alias
+
+type Subscription {
+  carEvent: Car!
+}
+
+type Car {
+  speed: Float
+  rpm: Float
+}
+
+type Query {
+  folder(path: String!): Folder!
+}
+
+type Folder {
+  directories: [DirectoryItem!]!
+  files: [FileItem!]!
+  music: [MusicItem!]!
+}
+
+type DirectoryItem {
+  path: String!
+}
+
+type FileItem {
+  path: String!
+  ext: String!
+}
+
+type MusicItem {
+  path: String!
+  ext: String!
+  metadata: Metadata!
+}
+
+type Metadata {
+  artist: String
+  album: String
+  title: String
+  picture: String
+  duration: Float!
+}

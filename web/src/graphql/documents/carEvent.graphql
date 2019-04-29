@@ -1,0 +1,6 @@
+subscription CarEvent {
+  carEvent {
+    speed
+    rpm
+  }
+}

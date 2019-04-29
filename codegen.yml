@@ -1,0 +1,48 @@
+overwrite: true
+documents: null
+generates:
+  #server types + resolver types from server schema
+  ./server/src/graphql/generated/resolvers.d.ts:
+    schema: ./server/src/graphql/schema.graphql
+    config:
+      contextType: ../requestContext#RequestContext
+      useIndexSignature: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+
+  #client types from web schema and server schema
+  ./web/src/graphql/generated/types.d.ts:
+    schema:
+      - ./server/src/graphql/schema.graphql
+  #   - ./web/src/graphql/schema.graphql
+    documents: ./web/src/graphql/documents/*.graphql
+    config:
+    plugins:
+      - typescript
+      - typescript-operations
+
+  #client types + resolver types from web schema
+  # ./web/src/graphql/generated/resolvers.d.ts:
+  #   schema: ./web/src/graphql/schema.graphql
+  #   config:
+  #     contextType: ../requestContext#RequestContext
+  #     useIndexSignature: true
+  #   plugins:
+  #     - typescript
+  #     - typescript-resolvers
+
+  #client hooks from web schema and server schema
+  ./web/src/graphql/generated/hooks.tsx:
+    schema:
+      - ./server/src/graphql/schema.graphql
+      #- ./web/src/graphql/schema.graphql
+    documents: ./web/src/graphql/documents/*.graphql
+    config:
+      withHOC: false
+      withComponent: false
+      withHooks: true
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo

@@ -1,0 +1,19 @@
+# Write your query or mutation here
+query Folder($path: String!) {
+  folder(path: $path) {
+    directories {
+      path
+    }
+    music {
+      path
+      ext
+      metadata {
+        artist
+        album
+        title
+        picture
+        duration
+      }
+    }
+  }
+}
