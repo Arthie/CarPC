@@ -1,6 +1,10 @@
 {
   "name": "carpc",
   "private": true,
+  "workspaces": [
+    "server",
+    "web"
+  ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "schema": "gql-gen --watch"
